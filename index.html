@@ -503,7 +503,8 @@
             }
         }
 
-        // Run check on page load and hash change
+        // Run check immediately, on DOM ready, and on hash change
+        switchView();
         window.addEventListener('DOMContentLoaded', switchView);
         window.addEventListener('hashchange', switchView);
     </script>
