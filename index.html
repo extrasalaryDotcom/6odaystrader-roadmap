@@ -40,11 +40,28 @@
         }
     </script>
     <style>
+        * {
+            -webkit-touch-callout: none; /* iOS और Android लॉन्ग-प्रेस मेनू ब्लॉक */
+        }
         body {
             font-family: 'Plus Jakarta Sans', 'Yantramanav', sans-serif;
             background-color: #070a12;
             color: #f1f5f9;
+            -webkit-user-select: none;   /* सफारी और क्रोम में सिलेक्शन ब्लॉक */
+            -moz-user-select: none;      /* फ़ायरफ़ॉक्स */
+            -ms-user-select: none;       /* एज */
+            user-select: none;           /* स्टैंडर्ड */
         }
+
+        /* यदि पेज पर कोई इनपुट/फॉर्म फील्ड हो तो टाइपिंग चालू रहे */
+        input, textarea, select {
+            -webkit-touch-callout: default !important;
+            -webkit-user-select: auto !important;
+            -moz-user-select: auto !important;
+            -ms-user-select: auto !important;
+            user-select: auto !important;
+        }
+
         .glow-emerald {
             box-shadow: 0 0 50px -10px rgba(16, 185, 129, 0.3);
         }
@@ -105,7 +122,7 @@
                     </div>
                     <span class="text-xl font-bold tracking-tight text-white">Extrasalary<span class="text-emerald-400">Dotcom</span></span>
                 </div>
-                <a href="https://pages.razorpay.com/stores/st_TUYaOVlRyLVfQh" class="hidden sm:inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-dark-900 font-bold px-5 py-2.5 rounded-xl text-sm transition-all duration-200">
+                <a href="https://pages.razorpay.com/stores/st_TUYaOVlRyLVfQh" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-dark-900 font-bold px-5 py-2.5 rounded-xl text-sm transition-all duration-200">
                     <span>Get This eBook</span>
                     <i class="fa-solid fa-bolt text-xs"></i>
                 </a>
@@ -133,7 +150,7 @@
                 </p>
 
                 <div class="flex flex-col items-center justify-center gap-4 mb-10">
-                    <a href="https://pages.razorpay.com/stores/st_TUYaOVlRyLVfQh" class="glow-btn w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-gradient-to-r from-emerald-500 via-teal-400 to-emerald-500 text-dark-900 font-extrabold text-lg sm:text-xl px-9 py-4 rounded-2xl shadow-xl transition-all duration-300 transform active:scale-95">
+                    <a href="https://pages.razorpay.com/stores/st_TUYaOVlRyLVfQh" target="_blank" rel="noopener noreferrer" class="glow-btn w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-gradient-to-r from-emerald-500 via-teal-400 to-emerald-500 text-dark-900 font-extrabold text-lg sm:text-xl px-9 py-4 rounded-2xl shadow-xl transition-all duration-300 transform active:scale-95">
                         <span>GET THIS EBOOK NOW (तुरंत एक्सेस पाएं)</span>
                         <i class="fa-solid fa-arrow-right text-base"></i>
                     </a>
@@ -352,7 +369,7 @@
                     </div>
 
                     <div class="text-center">
-                        <a href="https://pages.razorpay.com/stores/st_TUYaOVlRyLVfQh" class="glow-btn w-full inline-flex items-center justify-center gap-3 bg-gradient-to-r from-emerald-500 via-teal-400 to-emerald-500 text-dark-900 font-black text-lg sm:text-xl py-4 sm:py-5 px-8 rounded-2xl shadow-2xl transition-all">
+                        <a href="https://pages.razorpay.com/stores/st_TUYaOVlRyLVfQh" target="_blank" rel="noopener noreferrer" class="glow-btn w-full inline-flex items-center justify-center gap-3 bg-gradient-to-r from-emerald-500 via-teal-400 to-emerald-500 text-dark-900 font-black text-lg sm:text-xl py-4 sm:py-5 px-8 rounded-2xl shadow-2xl transition-all">
                             <span>GET THIS EBOOK NOW (₹199 में तुरंत खरीदें)</span>
                             <i class="fa-solid fa-bolt text-lg"></i>
                         </a>
@@ -431,7 +448,7 @@
                     ₹199 <span class="text-xs line-through text-slate-500 font-normal">₹999</span>
                 </div>
             </div>
-            <a href="https://pages.razorpay.com/stores/st_TUYaOVlRyLVfQh" class="glow-btn inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-400 text-dark-900 font-extrabold text-sm sm:text-base px-6 py-2.5 rounded-xl shadow-lg">
+            <a href="https://pages.razorpay.com/stores/st_TUYaOVlRyLVfQh" target="_blank" rel="noopener noreferrer" class="glow-btn inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-400 text-dark-900 font-extrabold text-sm sm:text-base px-6 py-2.5 rounded-xl shadow-lg">
                 <span>Get eBook Now</span>
                 <i class="fa-solid fa-arrow-right text-xs"></i>
             </a>
@@ -475,11 +492,11 @@
                     </div>
                 </div>
 
-                <!-- Direct Google Drive PDF Download Button -->
-                <a href="https://drive.google.com/uc?export=download&id=10skITKfLQ0uUuJY3WQOFZSFrsffRIH7H" target="_blank" class="glow-btn w-full inline-flex items-center justify-center gap-3 bg-gradient-to-r from-emerald-500 via-teal-400 to-emerald-500 text-dark-900 font-extrabold text-base sm:text-lg py-3.5 px-6 rounded-xl shadow-xl transition-all">
+                <!-- Secure Dynamic PDF Download Button (सुरक्षित जावास्क्रिप्ट ट्रिगर) -->
+                <button type="button" onclick="secureEbookDownload()" class="glow-btn w-full inline-flex items-center justify-center gap-3 bg-gradient-to-r from-emerald-500 via-teal-400 to-emerald-500 text-dark-900 font-extrabold text-base sm:text-lg py-3.5 px-6 rounded-xl shadow-xl transition-all cursor-pointer">
                     <i class="fa-solid fa-circle-down"></i>
                     <span>DOWNLOAD EBOOK (PDF डाउनलोड करें)</span>
-                </a>
+                </button>
             </div>
 
             <!-- Next Action Steps -->
@@ -596,9 +613,24 @@
     </div>
 
 
-    <!-- ================= JAVASCRIPT CONTROLLER ================= -->
+    <!-- ================= JAVASCRIPT CONTROLLER & SECURITY SHIELD ================= -->
     <script>
-        // FAQ Toggle Logic
+        // 1. एन्क्रिप्टेड सुरक्षित ई-बुक डाउनलोड फंक्शन
+        function secureEbookDownload() {
+            // एनकोडेड डायरेक्ट ड्राइव लिंक
+            const payload = "aHR0cHM6Ly9kcml2ZS5nb29nbGUuY29tL3VjP2V4cG9ydD1kb3dubG9hZCZpZD0xMHNrSVRLZkxRMHVVdUpZM1dRT0ZaU0Zyc2ZmUklIN0g=";
+            const targetUrl = atob(payload);
+
+            const anchor = document.createElement('a');
+            anchor.href = targetUrl;
+            anchor.target = "_blank";
+            anchor.rel = "noopener noreferrer";
+            document.body.appendChild(anchor);
+            anchor.click();
+            document.body.removeChild(anchor);
+        }
+
+        // 2. FAQ Toggle Logic
         function toggleFaq(id) {
             const ans = document.getElementById(`faq-ans-${id}`);
             const icon = document.getElementById(`faq-icon-${id}`);
@@ -611,7 +643,7 @@
             }
         }
 
-        // Modal Open / Close Logic
+        // 3. Modal Open / Close Logic
         function openModal(modalId) {
             const modal = document.getElementById(modalId);
             if (modal) {
@@ -644,7 +676,7 @@
             }
         });
 
-        // Automatic Single-Page View Switcher Logic
+        // 4. Automatic Single-Page View Switcher Logic
         function switchView() {
             const urlParams = new URLSearchParams(window.location.search);
             const isPaymentSuccess = urlParams.get('payment') === 'success' || 
@@ -665,10 +697,79 @@
             }
         }
 
-        // Run check immediately, on DOM ready, and on hash change
         switchView();
         window.addEventListener('DOMContentLoaded', switchView);
         window.addEventListener('hashchange', switchView);
+
+        // --- ULTRA SECURITY GUARDS ---
+
+        // 5. राइट-क्लिक और मोबाइल लॉन्ग-प्रेस ब्लॉक
+        document.addEventListener('contextmenu', function(e) {
+            const isInput = ['INPUT', 'TEXTAREA'].includes(e.target.tagName);
+            if (!isInput) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        // 6. कॉपी और कट ब्लॉक
+        document.addEventListener('copy', function(e) {
+            const isInput = ['INPUT', 'TEXTAREA'].includes(e.target.tagName);
+            if (!isInput) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        document.addEventListener('cut', function(e) {
+            const isInput = ['INPUT', 'TEXTAREA'].includes(e.target.tagName);
+            if (!isInput) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        // 7. ड्रैग सिलेक्शन ब्लॉक
+        document.addEventListener('dragstart', function(e) {
+            const isInput = ['INPUT', 'TEXTAREA'].includes(e.target.tagName);
+            if (!isInput) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        // 8. DevTools और कीबोर्ड शॉर्टकट ब्लॉक
+        document.addEventListener('keydown', function(e) {
+            const isInput = ['INPUT', 'TEXTAREA'].includes(e.target.tagName);
+
+            // F12 ब्लॉक
+            if (e.key === 'F12') {
+                e.preventDefault();
+                return false;
+            }
+
+            // Ctrl + Shift + I / J / C (DevTools शॉर्टकट)
+            if ((e.ctrlKey || e.metaKey) && e.shiftKey) {
+                const k = e.key.toLowerCase();
+                if (k === 'i' || k === 'j' || k === 'c') {
+                    e.preventDefault();
+                    return false;
+                }
+            }
+
+            // Ctrl / Command शॉर्टकट ब्लॉक (View Source, Save, Print, Select All, Copy)
+            if (e.ctrlKey || e.metaKey) {
+                const k = e.key.toLowerCase();
+                if (['u', 's', 'p'].includes(k)) {
+                    e.preventDefault();
+                    return false;
+                }
+                if (['a', 'c'].includes(k) && !isInput) {
+                    e.preventDefault();
+                    return false;
+                }
+            }
+        });
     </script>
 </body>
 </html>
